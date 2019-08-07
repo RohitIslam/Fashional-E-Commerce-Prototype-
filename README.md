@@ -1,0 +1,1 @@
+This is a simple ReactJs base project or a prototype of an e-commerce application where people can buy different types of product, add to cart, purchase through different payment system and so-on. I will try to implement every features of an e-commerce in this project. I will use React, Redux, Hooks and GraphQL for this project.
