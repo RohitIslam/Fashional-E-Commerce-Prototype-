@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "./SignIn.scss";
 import FormInput from "../../Components/UI/FormInput/FormInput";
+import CustomButton from "../../Components/UI/CustomButton/CustomButton";
 
 class SignIn extends Component {
   state = {
@@ -23,12 +24,11 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div>
+      <div className="SignIn">
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.submitHandler}>
-          <label>Email</label>
           <FormInput
             type="email"
             name="email"
@@ -37,7 +37,6 @@ class SignIn extends Component {
             label="Email"
             required
           />
-          <label>Password</label>
           <FormInput
             type="password"
             name="password"
@@ -46,7 +45,7 @@ class SignIn extends Component {
             label="Password"
             required
           />
-          <input type="submit" value="Submit form" />
+          <CustomButton type="submit"> Sign In </CustomButton>
         </form>
       </div>
     );
