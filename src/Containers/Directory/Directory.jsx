@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./Directory.scss";
-import MenuItem from "../../Components/MenuItems/MenuItem/MenuItem";
+import MenuItem from "../../Components/MenuItem/MenuItem";
 
 class Directoy extends Component {
   state = {
@@ -49,6 +49,7 @@ class Directoy extends Component {
             title={section.title}
             imageUrl={section.imageUrl}
             size={section.size}
+            linkUrl={section.linkUrl}
           />
         ))}
       </div>
