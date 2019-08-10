@@ -16,7 +16,7 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    //checking users subscription or authentication in firebase
+    //checking users subscription or authentication state changing in firebase (Open Subscription)
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
       console.log(user);
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route path="/signin" exact component={SignInAndUp} />
           <Route path="/shop" exact component={Shop} />
