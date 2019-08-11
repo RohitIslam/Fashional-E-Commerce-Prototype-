@@ -6,7 +6,7 @@ import Homepage from "./Components/Homepage/Homepage";
 import Shop from "./Containers/Shop/Shop";
 import Header from "./Components/Header/Header";
 import SignInAndUp from "./Components/SignInAndUp/SignInAndUp";
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends Component {
   state = {
@@ -17,9 +17,8 @@ class App extends Component {
 
   componentDidMount() {
     //checking users subscription or authentication state changing in firebase (Open Subscription)
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
     });
   }
 
