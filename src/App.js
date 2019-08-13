@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Homepage from "./Components/Homepage/Homepage";
 import Shop from "./Containers/Shop/Shop";
-import Header from "./Components/Header/Header";
+import Header from "./Containers/Header/Header";
 import SignInAndUp from "./Components/SignInAndUp/SignInAndUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
@@ -44,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route path="/signin" exact component={SignInAndUp} />
           <Route path="/shop" exact component={Shop} />
