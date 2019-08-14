@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import "./Header.scss";
 import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
+import CartIcon from "../../Components/CartIcon/CartIcon";
 // import * as actions from "../../store/actions/indexActions";
 
 class Header extends Component {
@@ -30,6 +31,7 @@ class Header extends Component {
               SIGN IN
             </Link>
           )}
+          <CartIcon />
         </div>
       </div>
     );
