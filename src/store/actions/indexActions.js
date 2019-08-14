@@ -1,3 +1,3 @@
 export { setCurrentUser } from "./userAction";
 
-export { toggleCartHidden } from "./cartAction";
+export { toggleCartHidden, addItem } from "./cartAction";
