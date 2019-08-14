@@ -1,19 +1,19 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  currentUser: null
+  hidden: true
 };
 
-const userReducer = (currentState = initialState, action) => {
+const cartReducer = (currentState = initialState, action) => {
   switch (action.type) {
-    case actionTypes.SET_CURRENT_USER:
+    case actionTypes.TOGGLE_CART_HIDDEN:
       return {
         ...currentState,
-        currentUser: action.payload
+        hidden: !currentState.hidden
       };
     default:
       return currentState;
   }
 };
 
-export default userReducer;
+export default cartReducer;
