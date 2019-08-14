@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./CartIcon.scss";
-import { ReactComponent as ShoppingIcon } from "../../assets/images/shoppingBag.svg";
+import { ReactComponent as ShoppingIcon } from "../../../assets/images/shoppingBag.svg";
 
 const CartIcon = () => {
   return (

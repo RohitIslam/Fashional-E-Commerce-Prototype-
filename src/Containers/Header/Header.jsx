@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import "./Header.scss";
 import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
-import CartIcon from "../../Components/CartIcon/CartIcon";
+import CartIcon from "../../Components/Cart/CartIcon/CartIcon";
+import CartDropdown from "../../Components/Cart/CartDropdown/CartDropdown";
 // import * as actions from "../../store/actions/indexActions";
 
 class Header extends Component {
@@ -33,6 +34,7 @@ class Header extends Component {
           )}
           <CartIcon />
         </div>
+        <CartDropdown />
       </div>
     );
   }
