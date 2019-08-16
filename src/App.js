@@ -3,9 +3,12 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./App.css";
+
 import Homepage from "./Components/Homepage/Homepage";
 import Shop from "./Containers/Shop/Shop";
 import Header from "./Containers/Header/Header";
+import CheckOut from "./Containers/CheckOut/CheckOut";
+
 import SignInAndUp from "./Components/SignInAndUp/SignInAndUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import * as actions from "./store/actions/indexActions";
@@ -50,6 +53,7 @@ class App extends Component {
             }
           />
           <Route path="/shop" exact component={Shop} />
+          <Route path="/checkout" exact component={CheckOut} />
           <Route path="/" exact component={Homepage} />
         </Switch>
       </div>

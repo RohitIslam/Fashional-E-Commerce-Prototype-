@@ -7,6 +7,11 @@ export const selectCartItems = createSelector(
   cart => cart.cartItems
 ); //this function is called output Selector because it uses createSelector
 
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+); //this function is called output Selector because it uses createSelector
+
 export const selectCartItemsCount = createSelector(
   [selectCartItems],
   cartItems =>

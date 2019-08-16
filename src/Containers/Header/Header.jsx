@@ -7,6 +7,8 @@ import { ReactComponent as Logo } from "../../assets/images/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../Cart/CartIcon/CartIcon";
 import CartDropdown from "../Cart/CartDropdown/CartDropdown";
+import { selectCartHidden } from "../../store/selectors/cart.selectors";
+import { selectCurrentUser } from "../../store/selectors/user.selectors";
 // import * as actions from "../../store/actions/indexActions";
 
 class Header extends Component {
@@ -42,8 +44,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.user.currentUser,
-    hidden: state.cart.hidden
+    currentUser: selectCurrentUser(state),
+    hidden: selectCartHidden(state)
   };
 };
 
