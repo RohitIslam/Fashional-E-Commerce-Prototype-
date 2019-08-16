@@ -12,7 +12,21 @@ class CheckOutItem extends Component {
           <img src={this.props.cartItem.imageUrl} alt="item" />
         </div>
         <span className="name">{this.props.cartItem.name}</span>
-        <span className="quantity">{this.props.cartItem.quantity}</span>
+        <span className="quantity">
+          <div
+            className="arrow"
+            onClick={() => this.props.onRemoveItemQuantity(this.props.cartItem)}
+          >
+            &#10094;
+          </div>
+          <span className="value">{this.props.cartItem.quantity}</span>
+          <div
+            className="arrow"
+            onClick={() => this.props.onAddItem(this.props.cartItem)}
+          >
+            &#10095;
+          </div>
+        </span>
         <span className="price">{this.props.cartItem.price}</span>
         <div
           className="remove-button"
@@ -27,7 +41,9 @@ class CheckOutItem extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRemoveItem: item => dispatch(actions.removeItem(item))
+    onAddItem: item => dispatch(actions.addItem(item)),
+    onRemoveItem: item => dispatch(actions.removeItem(item)),
+    onRemoveItemQuantity: item => dispatch(actions.removeItemQuantity(item))
   };
 };
 

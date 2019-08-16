@@ -19,3 +19,10 @@ export const removeItem = item => {
     payload: item
   };
 };
+
+export const removeItemQuantity = item => {
+  return {
+    type: actionTypes.REMOVE_ITEM_QUANTITY,
+    payload: item
+  };
+};

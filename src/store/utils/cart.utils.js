@@ -19,3 +19,25 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }]; // quantity property gets attached for the first time since this if block won't run when it is a new item
 };
+
+export const removeItemQuantityFromCart = (cartItems, cartItemToRemove) => {
+  // searching if the added item exist in the cartItems array or not. If exist, than it will assign 'true' in the existingCartItem boolean variable for next process.
+
+  const existingCartItem = cartItems.find(
+    cartItem => cartItem.id === cartItemToRemove.id
+  );
+
+  // If existingCartItem is True and it's quantity is equal to 1, than it will remove the entire item from the cart
+
+  if (existingCartItem.quantity === 1) {
+    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
+  }
+
+  // If existingCartItem is False, than it will return a new array of existing items and also remove the item quantity by 1
+
+  return cartItems.map(cartItem =>
+    cartItem.id === cartItemToRemove.id
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+      : cartItem
+  );
+};
