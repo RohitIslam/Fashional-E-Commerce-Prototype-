@@ -6,7 +6,7 @@ import {
   selectCartItems,
   selectCartTotalPrice
 } from "../../store/selectors/cart.selectors";
-import CheckOutItem from "../../Components/CheckOutItem/CheckOutItem";
+import CheckOutItem from "./CheckOutItem/CheckOutItem";
 
 class CheckOut extends Component {
   render() {
